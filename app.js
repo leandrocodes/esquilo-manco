@@ -9,11 +9,8 @@ client.once('ready', () => {
 client.on('message', message => {
   console.log(message.content)
   if (message.content == `${prefix}ping`) message.channel.send('Pong.')
-})
-
-client.on('message', message => {
-  console.log(message.content)
-  if (message.content == `${prefix}pong`) message.channel.send('Ping.')
+  else if (message.content == `${prefix}beep`) message.channel.send('Boop.')
+  else if (message.content == `${prefix}server`) message.channel.send(`${message.guild.name}, o melhor servidor de RPG da face da terra!`)
 })
 
 client.login(token)
