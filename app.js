@@ -1,6 +1,6 @@
 const Discord = require('discord.js')
 const client = new Discord.Client()
-require('dotenv').config()
+const { prefix, token } = require('./config.json')
 
 client.once('ready', () => {
   console.log('Esquilo Manco Praises the Sun!')
@@ -8,7 +8,12 @@ client.once('ready', () => {
 
 client.on('message', message => {
   console.log(message.content)
+  if (message.content == `${prefix}ping`) message.channel.send('Pong.')
 })
 
-client.login(process.env.CLIENT_TOKEN)
+client.on('message', message => {
+  console.log(message.content)
+  if (message.content == `${prefix}pong`) message.channel.send('Ping.')
+})
 
+client.login(token)
