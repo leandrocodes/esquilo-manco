@@ -24,6 +24,8 @@ client.on('message', message => {
   if (command == 'ping') client.commands.get('ping').execute(message)
 
   if (command == 'create-table') client.commands.get('create-table').execute(message, args)
+
+  if (command == 'roll') client.commands.get('dices').execute(message, args)
 })
 
 client.login(token)
