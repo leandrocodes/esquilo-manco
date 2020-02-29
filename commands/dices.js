@@ -15,6 +15,7 @@ module.exports = {
             
             const dice = args.join()
             let roll = roller.roll(dice)
+            // TODO: DEIXAR O RESULTADO EM NEGRITO
             message.channel.send(`${message.author} jogou o(s) dado(s) ${roll}`)
         }
     }
